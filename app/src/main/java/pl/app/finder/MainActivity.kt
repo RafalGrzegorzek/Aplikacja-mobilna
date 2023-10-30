@@ -5,6 +5,7 @@ import android.provider.MediaStore
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.app.AlertDialog
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -28,11 +29,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val infoButton = findViewById<Button>(R.id.button4)
-        infoButton.setOnClickListener {
-            val textView = findViewById<TextView>(R.id.textView)
-            textView.text = "Aplikacja jest w trakcie projektowania. Wkrótce pojawią się nowe treści."
+        val buttonInfo = findViewById<Button>(R.id.button4)
+
+        buttonInfo.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setMessage("Aplikacja jest w trakcie projektowania. Wkrótce pojawią się nowe treści.")
+                .setCancelable(true)
+                .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+
+            val alert = dialogBuilder.create()
+            alert.setTitle("Informacje")
+            alert.show()
         }
+
+
+
     }
 }
 
