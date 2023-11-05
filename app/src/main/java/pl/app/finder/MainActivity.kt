@@ -1,5 +1,7 @@
 package pl.app.finder
 
+import android.net.Uri
+import android.widget.Toast
 import android.content.Intent
 import android.provider.MediaStore
 import android.os.Bundle
@@ -42,7 +44,20 @@ class MainActivity : AppCompatActivity() {
             alert.show()
         }
 
+        val buttonMaps = findViewById<Button>(R.id.button2)
 
+        buttonMaps.setOnClickListener {
+            val gmmIntentUri = Uri.parse("geo:0,0?q=Place") // Tutaj możesz wpisać konkretne współrzędne lub nazwę miejsca
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+
+            if (mapIntent.resolveActivity(packageManager) != null) {
+                startActivity(mapIntent)
+            } else {
+                // Jeśli aplikacja Google Maps nie jest zainstalowana, otwórz stronę internetową
+                val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/Żabka+nowy+sącz/@49.6026939,20.708025,13z/data=!3m1!4b1?entry=ttu"))
+                startActivity(webIntent)
+            }
+        }
 
     }
 }
