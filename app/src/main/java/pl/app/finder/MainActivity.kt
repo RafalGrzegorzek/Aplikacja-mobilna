@@ -1,8 +1,16 @@
 package pl.app.finder
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +18,16 @@ import com.google.zxing.integration.android.IntentIntegrator
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnCam: Button
+    private lateinit var notificationManager: NotificationManager
+    private val farewellNotificationId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        createNotificationChannel()
 
         btnCam = findViewById(R.id.btnCam)
 
@@ -67,24 +81,57 @@ class MainActivity : AppCompatActivity() {
 
         // Sprawdzenie, czy wynik skanowania jest poprawny
         if (result != null) {
-            if (result != null) {
-                if (result.contents != null) {
-                    val scannedText = result.contents
+            if (result.contents != null) {
+                val scannedText = result.contents
 
-                    val alertDialogBuilder = AlertDialog.Builder(this)
-                    alertDialogBuilder.setTitle("Odczytano kod QR")
-                    alertDialogBuilder.setMessage("Treść kodu: $scannedText")
-                    alertDialogBuilder.setPositiveButton("OK") { dialog, which -> dialog.dismiss() }
-
-                    val alertDialog = alertDialogBuilder.create()
-                    alertDialog.show()
-
-                    // Tutaj możesz podjąć dalsze działania w zależności od odczytanego tekstu
-                }
+                showFarewellNotification()
+                showResultAlertDialog(scannedText)
             }
-
         }
     }
-}
 
+
+    private fun showFarewellNotification() {
+        val intent = Intent(this, MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE)
+
+        val notification = Notification.Builder(this, farewellNotificationChannelId)
+            .setContentTitle("Dziękujemy!")
+            .setContentText("Dziękujemy za korzystanie z naszej aplikacji.")
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .build()
+
+        notificationManager.notify(farewellNotificationId, notification)
+    }
+
+    // Funkcja wyświetlająca alert z wynikiem skanowania kodu QR
+    private fun showResultAlertDialog(scannedText: String) {
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("Odczytano kod QR")
+        alertDialogBuilder.setMessage("Treść kodu: $scannedText")
+        alertDialogBuilder.setPositiveButton("OK") { dialog, which -> dialog.dismiss() }
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
+    }
+
+    // Tworzenie kanału powiadomień dla Androida 8.0 i nowszych
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                farewellNotificationChannelId,
+                "Farewell Notification Channel",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+    companion object {
+        const val farewellNotificationChannelId = "farewell_channel_id"
+    }
+
+}
 
