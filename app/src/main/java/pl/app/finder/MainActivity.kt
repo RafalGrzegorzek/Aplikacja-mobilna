@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonInfo.setOnClickListener {
             val dialogBuilder = AlertDialog.Builder(this)
-            dialogBuilder.setMessage("Aplikacja jest w trakcie projektowania. Wkrótce pojawią się nowe treści.")
+            dialogBuilder.setMessage("Autorzy: Szymon Ząbczyk, Rafał Grzegorzek.\nWszelkie prawa zastrzeżone. Nieautoryzowane rozpowszechnianie całości lub fragmentu niniejszej publikacji w jakiejkolwiek postaci jest zabronione. \n@Copyrights")
                 .setCancelable(true)
                 .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
 
