@@ -9,25 +9,23 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.google.zxing.integration.android.IntentIntegrator
+import pl.app.finder.AboutFragment
+import android.view.View
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnCam: Button
-    private lateinit var notificationManager: NotificationManager
-    private val farewellNotificationId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
-        createNotificationChannel()
 
         btnCam = findViewById(R.id.btnCam)
 
@@ -43,15 +41,26 @@ class MainActivity : AppCompatActivity() {
         val buttonInfo = findViewById<Button>(R.id.button4)
 
         buttonInfo.setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(this)
-            dialogBuilder.setMessage("Autorzy: Szymon Ząbczyk, Rafał Grzegorzek.\nWszelkie prawa zastrzeżone. Nieautoryzowane rozpowszechnianie całości lub fragmentu niniejszej publikacji w jakiejkolwiek postaci jest zabronione. \n@Copyrights")
-                .setCancelable(true)
-                .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+            val buttonInfo = findViewById<Button>(R.id.button4)
 
-            val alert = dialogBuilder.create()
-            alert.setTitle("Informacje")
-            alert.show()
+            buttonInfo.setOnClickListener {
+                // Ukryj wszystkie aktualne przyciski
+                findViewById<Button>(R.id.btnCam).visibility = View.GONE
+                findViewById<Button>(R.id.button2).visibility = View.GONE
+                findViewById<Button>(R.id.button4).visibility = View.GONE
+
+                // Przekierowanie do fragmentu "AboutFragment"
+                val aboutFragment = AboutFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, aboutFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+
+
+
         }
+
 
         val buttonMaps = findViewById<Button>(R.id.button2)
 
@@ -84,26 +93,9 @@ class MainActivity : AppCompatActivity() {
             if (result.contents != null) {
                 val scannedText = result.contents
 
-                showFarewellNotification()
                 showResultAlertDialog(scannedText)
             }
         }
-    }
-
-
-    private fun showFarewellNotification() {
-        val intent = Intent(this, MainActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE)
-
-        val notification = Notification.Builder(this, farewellNotificationChannelId)
-            .setContentTitle("Dziękujemy!")
-            .setContentText("Dziękujemy za korzystanie z naszej aplikacji.")
-            .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentIntent(pendingIntent)
-            .setAutoCancel(true)
-            .build()
-
-        notificationManager.notify(farewellNotificationId, notification)
     }
 
     // Funkcja wyświetlająca alert z wynikiem skanowania kodu QR
@@ -115,22 +107,6 @@ class MainActivity : AppCompatActivity() {
 
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
-    }
-
-    // Tworzenie kanału powiadomień dla Androida 8.0 i nowszych
-    private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                farewellNotificationChannelId,
-                "Farewell Notification Channel",
-                NotificationManager.IMPORTANCE_DEFAULT
-            )
-            notificationManager.createNotificationChannel(channel)
-        }
-    }
-
-    companion object {
-        const val farewellNotificationChannelId = "farewell_channel_id"
     }
 
 }
