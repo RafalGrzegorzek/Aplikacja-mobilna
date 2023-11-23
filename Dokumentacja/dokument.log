@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.16)  23 NOV 2023 19:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.16)  23 NOV 2023 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1057,11 +1057,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/pl/plit.enc}]
 (./tex/rozdzial1.tex
-<rys/gps-icon.png, id=66, 389.49727pt x 389.49727pt>
-File: rys/gps-icon.png Graphic file (type png)
-<use rys/gps-icon.png>
-Package pdftex.def Info: rys/gps-icon.png  used on input line 8.
-(pdftex.def)             Requested size: 113.81102pt x 113.80713pt.
+<rys/Google-maps.png, id=66, 2055.68pt x 2055.68pt>
+File: rys/Google-maps.png Graphic file (type png)
+<use rys/Google-maps.png>
+Package pdftex.def Info: rys/Google-maps.png  used on input line 8.
+(pdftex.def)             Requested size: 170.71652pt x 170.69981pt.
+
+Overfull \hbox (3.96806pt too wide) in paragraph at lines 13--14
+[]\OT4/cmr/m/n/12 U»ytkownik po-wi-nien mie¢ mo»-li-wo±¢ wy-±wie-tla-nia skle-p
+ów spo-»yw-czych ›abka
+ []
+
 ) (./tex/rozdzial2.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1072,7 +1078,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
 [3{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./rys
-/gps-icon.png>]
+/Google-maps.png>]
 <rys/android-studio.png, id=77, 513.92pt x 555.07375pt>
 File: rys/android-studio.png Graphic file (type png)
 <use rys/android-studio.png>
@@ -1191,7 +1197,7 @@ Package logreq Info: Writing requests to 'dokument.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  24178 strings out of 474266
- 409900 string characters out of 5751449
+ 409921 string characters out of 5751449
  1932558 words of memory out of 5000000
  46000 multiletter control sequences out of 15000+600000
  571494 words of font info for 74 fonts, out of 8000000 for 9000
@@ -1205,7 +1211,7 @@ type1/public/pl/plr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/pl/plr
 s/type1/public/pl/plss12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/pl/
 plssbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/pl/plti10.pfb><c:/t
 exlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on dokument.pdf (11 pages, 148811 bytes).
+Output written on dokument.pdf (11 pages, 271739 bytes).
 PDF statistics:
  169 PDF objects out of 1000 (max. 8388607)
  130 compressed objects within 2 object streams
