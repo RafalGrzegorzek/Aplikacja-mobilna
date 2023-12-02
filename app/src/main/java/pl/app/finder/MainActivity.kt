@@ -17,7 +17,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.google.zxing.integration.android.IntentIntegrator
 import pl.app.finder.AboutFragment
 import android.view.View
-
+import android.widget.ImageView
 
 
 class MainActivity : AppCompatActivity() {
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 findViewById<Button>(R.id.btnCam).visibility = View.GONE
                 findViewById<Button>(R.id.button2).visibility = View.GONE
                 findViewById<Button>(R.id.button4).visibility = View.GONE
+                findViewById<ImageView>(R.id.imageView3)?.visibility = View.GONE
 
                 // Przekierowanie do fragmentu "AboutFragment"
                 val aboutFragment = AboutFragment()
@@ -60,7 +61,6 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-
 
         val buttonMaps = findViewById<Button>(R.id.button2)
 

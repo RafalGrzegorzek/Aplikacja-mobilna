@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 
@@ -70,6 +71,8 @@ class AboutFragment : Fragment() {
         mainActivity?.findViewById<Button>(R.id.btnCam)?.visibility = View.GONE
         mainActivity?.findViewById<Button>(R.id.button2)?.visibility = View.GONE
         mainActivity?.findViewById<Button>(R.id.button4)?.visibility = View.GONE
+        mainActivity?.findViewById<ImageView>(R.id.imageView3)?.visibility = View.GONE
+
     }
 }
 
