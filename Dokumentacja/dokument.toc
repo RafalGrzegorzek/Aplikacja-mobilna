@@ -2,10 +2,12 @@
 \contentsline {section}{\numberline {1}Ogólne określenie wymagań}{3}{section.1}%
 \contentsline {section}{\numberline {2}Określenie wymagań szczegółowych}{4}{section.2}%
 \contentsline {section}{\numberline {3}Projektowanie}{5}{section.3}%
-\contentsline {section}{\numberline {4}Implementacja}{6}{section.4}%
-\contentsline {section}{\numberline {5}Testowanie}{7}{section.5}%
-\contentsline {section}{\numberline {6}Podręcznik użytkownika}{8}{section.6}%
-\contentsline {section}{Literatura}{9}{section.6}%
-\contentsline {section}{Spis rysunków}{9}{section.6}%
-\contentsline {section}{Spis tabel}{10}{section.6}%
-\contentsline {section}{Spis listingów}{11}{section.6}%
+\contentsline {subsection}{\numberline {3.1}Android studio}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Github i Github Desktop}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Implementacja}{8}{section.4}%
+\contentsline {section}{\numberline {5}Testowanie}{9}{section.5}%
+\contentsline {section}{\numberline {6}Podręcznik użytkownika}{10}{section.6}%
+\contentsline {section}{Literatura}{11}{section.6}%
+\contentsline {section}{Spis rysunków}{12}{section*.6}%
+\contentsline {section}{Spis tabel}{13}{section*.6}%
+\contentsline {section}{Spis listingów}{14}{section*.6}%

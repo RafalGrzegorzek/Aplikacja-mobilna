@@ -16,5 +16,42 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{www1}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Android Studio}
+      \field{urlday}{11}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.android.com/studio
+      \endverb
+      \verb{url}
+      \verb https://developer.android.com/studio
+      \endverb
+    \endentry
+    \entry{www2}{online}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Android Studio-archiwum}
+      \field{urlday}{11}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.android.com/studio/archive
+      \endverb
+      \verb{url}
+      \verb https://developer.android.com/studio/archive
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
