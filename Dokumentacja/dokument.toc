@@ -4,10 +4,10 @@
 \contentsline {section}{\numberline {3}Projektowanie}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Android studio}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Github i Github Desktop}{7}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Implementacja}{8}{section.4}%
-\contentsline {section}{\numberline {5}Testowanie}{9}{section.5}%
-\contentsline {section}{\numberline {6}Podręcznik użytkownika}{10}{section.6}%
-\contentsline {section}{Literatura}{11}{section.6}%
-\contentsline {section}{Spis rysunków}{12}{section*.6}%
-\contentsline {section}{Spis tabel}{13}{section*.6}%
-\contentsline {section}{Spis listingów}{14}{section*.6}%
+\contentsline {section}{\numberline {4}Implementacja}{9}{section.4}%
+\contentsline {section}{\numberline {5}Testowanie}{10}{section.5}%
+\contentsline {section}{\numberline {6}Podręcznik użytkownika}{11}{section.6}%
+\contentsline {section}{Literatura}{12}{section.6}%
+\contentsline {section}{Spis rysunków}{13}{section*.9}%
+\contentsline {section}{Spis tabel}{14}{section*.9}%
+\contentsline {section}{Spis listingów}{15}{section*.9}%
