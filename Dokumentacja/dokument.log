@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.6)  11 DEC 2023 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.6)  11 DEC 2023 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1056,7 +1056,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2{d:/texlive/2023/texmf-dist/fonts/enc/dvips/pl/plit.enc}]
 (./tex/rozdzial1.tex
-<rys/Google-maps.png, id=77, 2055.68pt x 2055.68pt>
+<rys/Google-maps.png, id=87, 2055.68pt x 2055.68pt>
 File: rys/Google-maps.png Graphic file (type png)
 <use rys/Google-maps.png>
 Package pdftex.def Info: rys/Google-maps.png  used on input line 8.
@@ -1078,7 +1078,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3{d:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./rys
 /Google-maps.png>]
-<rys/android-studio.png, id=88, 513.92pt x 555.07375pt>
+<rys/android-studio.png, id=98, 513.92pt x 555.07375pt>
 File: rys/android-studio.png Graphic file (type png)
 <use rys/android-studio.png>
 Package pdftex.def Info: rys/android-studio.png  used on input line 10.
@@ -1099,7 +1099,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
 [4 <./rys/android-studio.png>]
-<rys/giraffe.png, id=96, 1204.5pt x 632.3625pt>
+<rys/giraffe.png, id=106, 1204.5pt x 632.3625pt>
 File: rys/giraffe.png Graphic file (type png)
 <use rys/giraffe.png>
 Package pdftex.def Info: rys/giraffe.png  used on input line 9.
@@ -1114,17 +1114,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
 [5 <./rys/giraffe.png>]
-<rys/InsAndr/1.png, id=106, 375.65344pt x 292.09125pt>
+<rys/InsAndr/1.png, id=116, 375.65344pt x 292.09125pt>
 File: rys/InsAndr/1.png Graphic file (type png)
 <use rys/InsAndr/1.png>
 Package pdftex.def Info: rys/InsAndr/1.png  used on input line 21.
 (pdftex.def)             Requested size: 284.52756pt x 221.25179pt.
-<rys/InsAndr/2.png, id=107, 375.65344pt x 292.09125pt>
+<rys/InsAndr/2.png, id=117, 375.65344pt x 292.09125pt>
 File: rys/InsAndr/2.png Graphic file (type png)
 <use rys/InsAndr/2.png>
 Package pdftex.def Info: rys/InsAndr/2.png  used on input line 30.
 (pdftex.def)             Requested size: 284.52756pt x 221.25179pt.
-<rys/Github.png, id=108, 3854.4pt x 2168.1pt>
+<rys/Github.png, id=118, 3854.4pt x 2168.1pt>
 File: rys/Github.png Graphic file (type png)
 <use rys/Github.png>
 Package pdftex.def Info: rys/Github.png  used on input line 42.
@@ -1142,7 +1142,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
 [6 <./rys/InsAndr/1.png> <./rys/InsAndr/2.png>]
-<rys/git1.png, id=117, 700.86844pt x 527.72156pt>
+<rys/git1.png, id=127, 700.86844pt x 527.72156pt>
 File: rys/git1.png Graphic file (type png)
 <use rys/git1.png>
 Package pdftex.def Info: rys/git1.png  used on input line 52.
@@ -1157,7 +1157,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
 [7 <./rys/Github.png>]
-<rys/Github-desktop.png, id=125, 2055.68pt x 2055.68pt>
+<rys/Github-desktop.png, id=135, 2055.68pt x 2055.68pt>
 File: rys/Github-desktop.png Graphic file (type png)
 <use rys/Github-desktop.png>
 Package pdftex.def Info: rys/Github-desktop.png  used on input line 63.
@@ -1171,7 +1171,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
-[8 <./rys/git1.png> <./rys/Github-desktop.png>]) (./tex/rozdzial5.tex
+[8 <./rys/git1.png> <./rys/Github-desktop.png>]
+(d:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(d:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 13.
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 
+13.
+
+(d:/texlive/2023/texmf-dist/tex/latex/polski/ot4cmtt.fd
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)) (./tex/rozdzial5.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 22.48892pt, for example:
@@ -1180,7 +1194,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
-[9]) (./tex/rozdzial6.tex
+[9{d:/texlive/2023/texmf-dist/fonts/enc/dvips/pl/pltt.enc}])
+(./tex/rozdzial6.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 22.48892pt, for example:
@@ -1199,11 +1214,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
 [11]
-LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 
-78.
- (d:/texlive/2023/texmf-dist/tex/latex/polski/ot4cmtt.fd
-File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 22.48892pt, for example:
@@ -1212,8 +1222,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-10.48892pt}.
 
-[12{d:/texlive/2023/texmf-dist/fonts/enc/dvips/pl/plsc.enc}{d:/texlive/2023/tex
-mf-dist/fonts/enc/dvips/pl/pltt.enc}] (./dokument.lof)
+[12{d:/texlive/2023/texmf-dist/fonts/enc/dvips/pl/plsc.enc}] (./dokument.lof)
 \tf@lof=\write7
 \openout7 = `dokument.lof'.
 
@@ -1264,17 +1273,17 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `dokument.out' has not changed.
-(rerunfilecheck)             Checksum: 23ED43F6DA045D8E5DCAE5745B32C27D;1728.
+(rerunfilecheck)             Checksum: FB070AED8910AD43B7D4B87277E047D0;2056.
 Package logreq Info: Writing requests to 'dokument.run.xml'.
 \openout1 = `dokument.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24511 strings out of 474266
- 416521 string characters out of 5751444
- 1932558 words of memory out of 5000000
- 46309 multiletter control sequences out of 15000+600000
- 573344 words of font info for 78 fonts, out of 8000000 for 9000
+ 24881 strings out of 474266
+ 420628 string characters out of 5751444
+ 2038558 words of memory out of 5000000
+ 46642 multiletter control sequences out of 15000+600000
+ 574138 words of font info for 80 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  80i,11n,84p,731b,1744s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2023/texmf-dist/fonts/type1/public/pl/plbx10.pfb><d:/texlive/2023
@@ -1282,16 +1291,17 @@ Here is how much of TeX's memory you used:
 type1/public/pl/plcsc10.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/pl/p
 lr10.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/pl/plr12.pfb><d:/texliv
 e/2023/texmf-dist/fonts/type1/public/pl/plr17.pfb><d:/texlive/2023/texmf-dist/f
-onts/type1/public/pl/plr8.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/pl
-/plss12.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/pl/plssbx10.pfb><d:/
-texlive/2023/texmf-dist/fonts/type1/public/pl/plti10.pfb><d:/texlive/2023/texmf
--dist/fonts/type1/public/pl/plti12.pfb><d:/texlive/2023/texmf-dist/fonts/type1/
-public/pl/pltt12.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sf
-rm1200.pfb>
-Output written on dokument.pdf (15 pages, 963091 bytes).
+onts/type1/public/pl/plr6.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/pl
+/plr8.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/pl/plss12.pfb><d:/texl
+ive/2023/texmf-dist/fonts/type1/public/pl/plssbx10.pfb><d:/texlive/2023/texmf-d
+ist/fonts/type1/public/pl/plti10.pfb><d:/texlive/2023/texmf-dist/fonts/type1/pu
+blic/pl/plti12.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/pl/pltt10.pfb
+><d:/texlive/2023/texmf-dist/fonts/type1/public/pl/pltt12.pfb><d:/texlive/2023/
+texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on dokument.pdf (15 pages, 985995 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 304 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
