@@ -18,6 +18,8 @@ import com.google.zxing.integration.android.IntentIntegrator
 import pl.app.finder.AboutFragment
 import android.view.View
 import android.widget.ImageView
+import android.content.pm.PackageManager
+
 
 
 class MainActivity : AppCompatActivity() {
