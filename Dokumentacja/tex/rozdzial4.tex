@@ -39,3 +39,142 @@ app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 \end{lstlisting}
+\newpage
+\hspace{0.60cm}W listungu nr. 1:
+\begin{itemize}
+	\item Główny kontener, który używa ConstraintLayout (część biblioteki AndroidX) do definiowania układu komponentów interfejsu. Jest to rodzaj layoutu, który pozwala na definiowanie relacji pomiędzy komponentami - przedstawiony w liniach od 2 do 7.
+	\item W liniach od 10 do 25 opisany został przycisk rozpoczynający activity\_main. Jego właściwości:
+	\begin{itemize}
+		\item android:layout\_width i android:layout\_height: Szerokość i wysokość przycisku.
+		\item android:layout\_marginStart, android:layout\_marginTop, android:layout\_marginEnd, android:layout\_marginBottom: Marginesy przycisku od krawędzi layoutu.
+		\item android:backgroundTint= \#0C390F: Kolor tła przycisku.
+		\item android:fontFamily="serif-monospace": Wybrana rodzina czcionek.
+		\item android:text="Start": Tekst wyświetlany na przycisku.
+	    \item android:textSize="48sp": Rozmiar tekstu.
+		\item app:layout\_constraint*: Definicje ograniczeń umieszczające przycisk na ekranie. Przycisk jest przytwierdzony do krawędzi layoutu, co oznacza, że będzie zajmować całą dostępną przestrzeń.
+	\end{itemize}
+\end{itemize}
+\subsubsection{activity\_main}
+\begin{lstlisting}[caption=Activity\_main, label={lst:kod.xml}, language=XML]
+	<?xml version="1.0" encoding="utf-8"?>
+	<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/background1"
+	tools:context=".MainActivity">
+	
+	<FrameLayout
+	android:id="@+id/fragment_container"
+	android:layout_width="match_parent"
+	android:layout_height="0dp"
+	app:layout_constraintTop_toTopOf="parent"
+	app:layout_constraintBottom_toBottomOf="parent"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintEnd_toEndOf="parent"/>
+	
+	
+	<Button
+	android:id="@+id/btnCam"
+	android:layout_width="250dp"
+	android:layout_height="80dp"
+	android:layout_marginStart="50dp"
+	android:layout_marginTop="380dp"
+	android:layout_marginEnd="50dp"
+	android:layout_marginBottom="40dp"
+	android:backgroundTint="#062507"
+	android:fontFamily="monospace"
+	android:text="Skanuj QR"
+	android:textAppearance="@style/TextAppearance.AppCompat.Large"
+	app:layout_constraintBottom_toTopOf="@+id/button4"
+	app:layout_constraintEnd_toEndOf="parent"
+	app:layout_constraintHorizontal_bias="0.488"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent" />
+	
+	<Button
+	android:id="@+id/button2"
+	android:layout_width="250dp"
+	android:layout_height="80dp"
+	android:layout_marginStart="50dp"
+	android:layout_marginTop="260dp"
+	android:layout_marginEnd="50dp"
+	android:layout_marginBottom="40dp"
+	android:backgroundTint="#062507"
+	android:fontFamily="monospace"
+	android:text="Szukaj"
+	android:textAppearance="@style/TextAppearance.AppCompat.Large"
+	app:layout_constraintBottom_toTopOf="@+id/btnCam"
+	app:layout_constraintEnd_toEndOf="parent"
+	app:layout_constraintHorizontal_bias="0.488"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent" />
+	
+	<ImageView
+	android:id="@+id/imageView"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:scaleType="centerCrop"
+	android:visibility="invisible"
+	tools:layout_editor_absoluteX="0dp"
+	tools:layout_editor_absoluteY="0dp" />
+	
+	<TextView
+	android:id="@+id/textView"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_marginStart="16dp"
+	android:layout_marginTop="16dp"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toBottomOf="@+id/button4" />
+	
+	<ImageView
+	android:id="@+id/imageView3"
+	android:layout_width="393dp"
+	android:layout_height="131dp"
+	android:layout_marginBottom="129dp"
+	android:scaleType="centerCrop"
+	app:layout_constraintBottom_toTopOf="@+id/button2"
+	app:layout_constraintEnd_toEndOf="parent"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent"
+	app:srcCompat="@mipmap/ic_launcher4_foreground" />
+	
+	<Button
+	android:id="@+id/button4"
+	android:layout_width="250dp"
+	android:layout_height="80dp"
+	android:layout_marginStart="50dp"
+	android:layout_marginTop="500dp"
+	android:layout_marginEnd="50dp"
+	android:backgroundTint="#062507"
+	android:fontFamily="monospace"
+	android:text="Informacje"
+	android:textAppearance="@style/TextAppearance.AppCompat.Large"
+	app:layout_constraintEnd_toEndOf="parent"
+	app:layout_constraintHorizontal_bias="0.488"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent" />
+	
+	
+	</androidx.constraintlayout.widget.ConstraintLayout>
+\end{lstlisting}
+\hspace{0.60cm} W projekcie, wygląd strony głównej jest określony w pliku "activity\_main", w listingu 2 opisane są jej właściwości.
+\begin{itemize}
+	\item W liniach od 2 do 9 opisany jest korzeń layoutu:
+	\begin{itemize}
+		\item ConstraintLayout: Główny layout, który pozwala na definiowanie relacji pomiędzy komponentami.
+		\item xmlns:android, xmlns:app, xmlns:tools: Przestrzenie nazw XML używane w dokumencie.
+		\item android:layout\_width i android:layout\_height: Szerokość i wysokość layoutu zajmują całą dostępną przestrzeń.
+		\item android:background: Ustawia tło layoutu na obrazek zdefiniowany w pliku background1.
+		\item tools:context=".MainActivity": Dodatkowe narzędzia dla środowiska deweloperskiego, takie jak podpowiedzi dotyczące kontekstu.
+	\end{itemize}
+	\item Linie 11 do 18, kontener, który jest używany do wyświtlania fragmentóW.
+	\item Przycisk, który pozwala na skanowanie Kodów QR jest opisany w liniach od 21 do 37.
+	\item W liniach od 39 do 55 znajduje się przycisk "Szukaj", który jest główną funkcjonalnością aplikacji. Pozwala on na wyszukiwanie za pomocą GPS-u pobliskich sklepów "Żabka".
+	\item TextView, w liniach 66 do 73 użyty został do wyświetlania tekstu.
+	\item W liniach od 75 do 85 opisany jest obrazek, wyświetlany w main activity.
+	\item Od 87 do 101 lini określony został przycisk "Informacje", który przekierowuje nas do kolejnej strony.
+\end{itemize}

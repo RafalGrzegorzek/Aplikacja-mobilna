@@ -51,6 +51,22 @@
       \verb https://developer.android.com/studio/archive
       \endverb
     \endentry
+    \entry{www3}{online}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{Ikona Github}
+      \field{urlday}{11}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://1000logos.net/github-logo/
+      \endverb
+      \verb{url}
+      \verb https://1000logos.net/github-logo/
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
