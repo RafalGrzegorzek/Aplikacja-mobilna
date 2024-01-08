@@ -28,7 +28,7 @@
         android:layout_marginBottom="40dp"
         android:backgroundTint="#062507"
         android:fontFamily="monospace"
-        android:text="Skanuj QR"
+        android:text="@string/btn_scan"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:layout_marginBottom="40dp"
         android:backgroundTint="#062507"
         android:fontFamily="monospace"
-        android:text="Szukaj"
+        android:text="@string/button2"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/btnCam"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,12 +93,14 @@
         android:layout_marginEnd="50dp"
         android:backgroundTint="#062507"
         android:fontFamily="monospace"
-        android:text="Informacje"
+        android:text="@string/btn_info"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

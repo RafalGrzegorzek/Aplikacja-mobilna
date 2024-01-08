@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Finder</string>
+    <string name="btn_scan">Skanuj</string>
+    <string name="btn_info">Informacje</string>
+    <string name="button2">Szukaj</string>
+
 </resources>
