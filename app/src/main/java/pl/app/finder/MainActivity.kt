@@ -1,35 +1,27 @@
 package pl.app.finder
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import com.google.zxing.integration.android.IntentIntegrator
-import pl.app.finder.AboutFragment
-import android.view.View
-import android.widget.ImageView
-import android.content.pm.PackageManager
-
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnCam: Button
+    private lateinit var buttonInfo: Button
+    private lateinit var buttonMaps: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         btnCam = findViewById(R.id.btnCam)
+        buttonInfo = findViewById(R.id.button4)
+        buttonMaps = findViewById(R.id.button2)
 
         btnCam.setOnClickListener {
             // Inicjalizacja skanera ZXing
@@ -40,31 +32,20 @@ class MainActivity : AppCompatActivity() {
             integrator.initiateScan() // Uruchomienie aktywności skanowania
         }
 
-        val buttonInfo = findViewById<Button>(R.id.button4)
-
         buttonInfo.setOnClickListener {
-            val buttonInfo = findViewById<Button>(R.id.button4)
+            // Ukryj wszystkie aktualne przyciski
+            btnCam.visibility = View.GONE
+            buttonMaps.visibility = View.GONE
+            buttonInfo.visibility = View.GONE
+            findViewById<ImageView>(R.id.imageView3)?.visibility = View.GONE
 
-            buttonInfo.setOnClickListener {
-                // Ukryj wszystkie aktualne przyciski
-                findViewById<Button>(R.id.btnCam).visibility = View.GONE
-                findViewById<Button>(R.id.button2).visibility = View.GONE
-                findViewById<Button>(R.id.button4).visibility = View.GONE
-                findViewById<ImageView>(R.id.imageView3)?.visibility = View.GONE
-
-                // Przekierowanie do fragmentu "AboutFragment"
-                val aboutFragment = AboutFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, aboutFragment)
-                    .addToBackStack(null)
-                    .commit()
-            }
-
-
-
+            // Przekierowanie do fragmentu "AboutFragment"
+            val aboutFragment = AboutFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, aboutFragment)
+                .addToBackStack(null)
+                .commit()
         }
-
-        val buttonMaps = findViewById<Button>(R.id.button2)
 
         buttonMaps.setOnClickListener {
             val gmmIntentUri = Uri.parse("geo:0,0?q=Place") // Tutaj możesz wpisać konkretne współrzędne lub nazwę miejsca
@@ -110,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
-
 }
+
+
 
