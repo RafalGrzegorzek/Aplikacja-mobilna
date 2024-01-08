@@ -246,3 +246,106 @@
 		item android:textAppearance="\\@style/TextAppearance.AppCompat.Large": Określa wygląd tekstu, w tym jego rozmiar, dla dużego ekranu.
 	\end{itemize}
 \end{itemize}
+\subsection{Pliki values}
+W folderze "values" w projekcie znajdują się zasoby związane z wartościami, takie jak kolory, ciągi znaków, style, itp. To miejsce, gdzie przechowuje się różne ustawienia i definicje, które są używane w aplikacji. 
+\subsubsection{Plik colors.xml}
+\hspace{0.60 cm}Zawiera definicje kolorów, które są używane w aplikacji. Można tu zdefiniować niestandardowe kolory i odwoływać się do nich w innych miejscach kodu.
+\begin{lstlisting}[caption=colors.xml, label={lst:kod.xml}, language=XML]
+	<resources>
+	<color name="black">#FF000000</color>
+	<color name="white">#FFFFFFFF</color>
+	<color name="green">#0AA849</color>
+	</resources>
+\end{lstlisting}
+\begin{itemize}
+	\item Czarny (\#FF000000):
+	\begin{itemize}
+		\item name="black": Przypisuje nazwę "black" do tego koloru.
+		\item \#FF000000: Reprezentuje kolor czarny w formie szesnastkowej. Składa się z czterech bajtów: jeden bajt na przezroczystość (FF - maksymalna nieprzezroczystość) i trzy bajty na wartości kanałów kolorów RGB (czerwony, zielony, niebieski).
+	\end{itemize}
+	\item Biały (\#FFFFFFFF):
+	\begin{itemize}
+		\item name="white": Przypisuje nazwę "white" do tego koloru.
+		\item \#FFFFFFFF: Reprezentuje kolor biały. Podobnie jak w poprzednim przypadku, składa się z czterech bajtów: jeden bajt na przezroczystość (FF) i trzy bajty na wartości kanałów kolorów RGB.
+	\end{itemize}
+	\item Zielony (\#0AA849):
+	\begin{itemize}
+		\item name="green": Przypisuje nazwę "green" do tego koloru.
+		\item \#0AA849: Reprezentuje niestandardowy odcień zielonego koloru. Składa się z czterech bajtów: jeden bajt na przezroczystość (0A), a trzy bajty na wartości kanałów kolorów RGB.
+	\end{itemize}
+\end{itemize}
+\subsubsection{Plik strings.xml}
+\hspace{0.60 cm} Przechowuje ciągi znaków używane w aplikacji. Zdefiniowane tu teksty mogą być używane w kodzie aplikacji, co ułatwia zarządzanie tekstem i tłumaczeniem.
+\begin{lstlisting}[caption=strings.xml, label={lst:kod.xml}, language=XML]
+	<resources>
+	<string name="app_name">Finder</string>
+	<string name="btn_scan">Skanuj</string>
+	<string name="btn_info">Informacje</string>
+	<string name="button2">Szukaj</string>
+	<string name="button11">O nas</string>
+	<string name="button12">Wersja</string>
+	<string name="button13">Pomoc</string>
+	<string name="button14">Powrot</string>
+	<string name="start">Start</string>
+	<string name="obraz1">tlo</string>
+	<string name="obraz2">baner</string>
+	</resources>
+\end{lstlisting}
+\begin{itemize}
+	\item Nazwa aplikacji (app\_name):
+	\begin{itemize}
+		\item name="app\_name": Przypisuje nazwę "app\_name" do tej wartości.
+		\item <string name="app\_name">Finder</string>: Określa nazwę aplikacji jako "Finder". Ta wartość jest często używana jako nazwa aplikacji wyświetlana w pasku tytułowym i innych miejscach.
+	\end{itemize}
+	\item Przycisk "Skanuj" (btn\_scan):
+	\begin{itemize}
+		\item name="btn\_scan": Przypisuje nazwę "btn\_scan" do tej wartości.
+		\item <string name="btn\_scan">Skanuj</string>: Określa tekst na przycisku "Skanuj". Ta wartość może być używana wszędzie tam, gdzie potrzebny jest napis "Skanuj".
+	\end{itemize}
+	\item Przycisk "Informacje" (btn\_info):
+	\begin{itemize}
+		\item name="btn\_info": Przypisuje nazwę "btn\_info" do tej wartości.
+		\item <string name="btn\_info">Informacje</string>: Określa tekst na przycisku "Informacje". Ta wartość może być używana wszędzie tam, gdzie potrzebny jest napis "Informacje".
+	\end{itemize}
+	\item Przycisk "Szukaj" (button2):
+	\begin{itemize}
+		\item name="button2": Przypisuje nazwę "button2" do tej wartości.
+		\item <string name="button2">Szukaj</string>: Określa tekst na przycisku "Szukaj".
+	\end{itemize}
+	\item Inne przyciski o nazwach "button11", "button12", "button13", "button14":
+	\begin{itemize}
+		\item Przypisują nazwy i teksty do przycisków "O nas", "Wersja", "Pomoc" i "Powrót".
+	\end{itemize}
+	\item Inne wartości tekstowe o nazwach "start", "obraz1", "obraz2":
+	\begin{itemize}
+		\item Przypisują nazwy i teksty do innych elementów aplikacji, takich jak etykiety, opisy, czy nazwy obrazów.
+	\end{itemize}
+\end{itemize}
+\subsubsection{Plik themes.xml}
+Zawiera definicje motywów (themes), które określają wygląd ogólny aplikacji. Motywy są związane z kolorami, stylami i innymi ustawieniami interfejsu.
+\begin{lstlisting}[caption=themes.xml, label={lst:kod.xml}, language=XML]
+	<resources xmlns:tools="http://schemas.android.com/tools">
+	<!--  Base application theme.  -->
+	<style name="Base.Theme.Finder" parent="Theme.Material3.DayNight.NoActionBar">
+	<!--  Customize your light theme here.  -->
+	<!--  <item name="colorPrimary">@color/my_light_primary</item>  -->
+	</style>
+	<style name="Theme.Finder" parent="Base.Theme.Finder"/>
+	</resources>
+\end{lstlisting}
+\begin{itemize}
+	\item Styl bazowy aplikacji (Base.Theme.Finder):
+	\begin{itemize}
+		\item name="Base.Theme.Finder": Przypisuje nazwę "Base.Theme.Finder" do tego stylu.
+		\item parent="Theme.Material3.DayNight.NoActionBar": Określa, że ten styl dziedziczy od wbudowanego stylu Theme.Material3.DayNight.NoActionBar. Styl ten jest bazowym motywem aplikacji, który obsługuje tryby dzień/noc (Day/Night) i nie zawiera paska akcji.
+	\end{itemize}
+	\item Dostosowany motyw aplikacji (Theme.Finder):
+	\begin{itemize}
+		\item name="Theme.Finder": Przypisuje nazwę "Theme.Finder" do tego stylu.
+		\item parent="Base.Theme.Finder": Określa, że Theme.Finder dziedziczy od stylu bazowego Base.Theme.Finder. Jest to przykład dostosowanego motywu aplikacji, który może zawierać niestandardowe ustawienia kolorów, czcionek itp.
+	\end{itemize}
+	\item Zakomentowana sekcja (\(<!-- ... -->)\):
+	\begin{itemize}
+		\item Wewnętrzna sekcja stylu Base.Theme.Finder zawiera zakomentowany kod, który nie jest aktywny (\(<!-- ... -->)\). Jest to przykład, jak można dostosowywać konkretny kolor w motywie, ale w tym przypadku jest on wyłączony (zakomentowany przy użyciu <!-- ... -->). Można odkomentować i dostosować kolor, jeśli to potrzebne.
+	\end{itemize}
+\end{itemize}
