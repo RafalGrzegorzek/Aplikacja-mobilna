@@ -1,11 +1,9 @@
-// StartActivity.kt
-
 package pl.app.finder
-
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
@@ -18,6 +16,7 @@ import android.content.pm.PackageManager
 class StartActivity : AppCompatActivity() {
 
     private val CHANNEL_ID = "MyChannelId"
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,33 +26,32 @@ class StartActivity : AppCompatActivity() {
 
         val startButton = findViewById<Button>(R.id.buttonstart)
 
+        // Sprawdź, czy imię jest już zapisane w SharedPreferences
+        val sharedPrefs = getSharedPreferences("YourPrefsName", Context.MODE_PRIVATE)
+        val savedName = sharedPrefs.getString("user_name", null)
+
         startButton.setOnClickListener {
-            // Sprawdzanie uprawnienia do powiadomień
-            if (checkSelfPermission(android.Manifest.permission.VIBRATE) ==
-                PackageManager.PERMISSION_GRANTED
-            ) {
-                // Tworzenie powiadomienia
-                val notification = NotificationCompat.Builder(this, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.ic_launcher_foreground)
-                    .setContentTitle("Dziękujemy za korzystanie z naszej aplikacji")
-                    .setContentText("Teraz możesz rozpocząć korzystanie z aplikacji.")
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                    .build()
+            // ... (reszta kodu)
 
-                // Wysyłanie powiadomienia
-                with(NotificationManagerCompat.from(this)) {
-                    notify(1, notification)
-                }
+            // Dodaj imię do powiadomienia
+            val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle("Witaj, $savedName!")
+                .setContentText("Teraz możesz rozpocząć korzystanie z aplikacji.")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .build()
 
-                // Przejście do MainActivity po wciśnięciu przycisku
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            } else {
-                // Poproś użytkownika o uprawnienia
-                requestPermissions(arrayOf(android.Manifest.permission.VIBRATE), 1)
+            // Wysyłanie powiadomienia
+            with(NotificationManagerCompat.from(this)) {
+                notify(1, notification)
             }
+
+            // Przejście do MainActivity po wciśnięciu przycisku
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
+
 
     // Tworzenie kanału powiadomień (wymagane w Android 8.0 i nowszych)
     private fun createNotificationChannel() {
@@ -73,6 +71,6 @@ class StartActivity : AppCompatActivity() {
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
     }
-
 }
+
 

@@ -1,9 +1,9 @@
 package pl.app.finder
 
-import android.content.Intent
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +14,8 @@ import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
+
+
 
 class AboutFragment : Fragment() {
 
@@ -28,7 +30,7 @@ class AboutFragment : Fragment() {
         val button11 = view.findViewById<Button>(R.id.button11)
         button11.setOnClickListener {
             // Wyświetl informację o firmie
-            showSampleDialog("Autorzy: Szymon Ząbczyk, Rafał Grzegorzek.\\nWszelkie prawa zastrzeżone. Nieautoryzowane rozpowszechnianie całości lub fragmentu niniejszej publikacji w jakiejkolwiek postaci jest zabronione. \\n@Copyrights")
+            showSampleDialog("Autorzy: Szymon Ząbczyk, Rafał Grzegorzek.\nWszelkie prawa zastrzeżone. Nieautoryzowane rozpowszechnianie całości lub fragmentu niniejszej publikacji w jakiejkolwiek postaci jest zabronione. \n@Copyrights")
             // Ukryj przyciski
             hideButtons()
         }
@@ -47,8 +49,13 @@ class AboutFragment : Fragment() {
 
         val button13 = view.findViewById<Button>(R.id.button13)
         button13.setOnClickListener {
-            // Wyświetl informację o pomocy
-            showSampleDialog("Potrzebujesz pomocy? Skontaktuj się z nami. Kontakt: ***")
+            // Przekieruj do NameInputFragment
+            val nameInputFragment = NameInputFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, nameInputFragment)
+                .addToBackStack(null)
+                .commit()
+
             // Ukryj przyciski
             hideButtons()
         }
