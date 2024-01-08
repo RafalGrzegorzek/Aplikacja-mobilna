@@ -14,7 +14,7 @@
         android:layout_height="80dp"
         android:backgroundTint="#283593"
         android:fontFamily="sans-serif-light"
-        android:text="O nas"
+        android:text="@string/button11"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
@@ -24,7 +24,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#283593"
         android:fontFamily="sans-serif-light"
-        android:text="Wersja"
+        android:text="@string/button12"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
@@ -34,7 +34,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#283593"
         android:fontFamily="sans-serif-light"
-        android:text="Pomoc"
+        android:text="@string/button13"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
@@ -44,7 +44,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#283593"
         android:fontFamily="sans-serif-light"
-        android:text="Powrót"
+        android:text="@string/button14"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 

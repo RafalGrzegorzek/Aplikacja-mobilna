@@ -3,5 +3,11 @@
     <string name="btn_scan">Skanuj</string>
     <string name="btn_info">Informacje</string>
     <string name="button2">Szukaj</string>
+    <string name="button11">O nas</string>
+    <string name="button12">Wersja</string>
+    <string name="button13">Pomoc</string>
+    <string name="button14">Powrót</string>
 
+    <string name="obraz1">tlo</string>
+    <string name="obraz2">baner</string>
 </resources>
