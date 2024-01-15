@@ -1,0 +1,33 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadź imię"
+        android:padding="20dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zapisz" />
+
+    <Button
+        android:id="@+id/buttonback"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="500dp"
+        android:backgroundTint="#283593"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/button14"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+
+</LinearLayout>
