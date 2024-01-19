@@ -2,11 +2,12 @@
 \section{Implementacja}		%4
 %Wkleić szkielet kodu, wraz z komentarzami. Opisać zmienne, struktury do czego służą. Opisać procedury, metody co wykonują. Opisać nowe zdefiniowane klasy. Opisać dziedziczenie. Opisać nowo utworzone pliki za co odpowiadają.
 \subsection{Pliki layout'u}
-\hspace{0.60cm}Layout w naszej aplikacji podzielony został na 3 pliki.xml:
+\hspace{0.60cm}Layout w naszej aplikacji podzielony został na 4 pliki.xml:
 \begin{itemize}
 	\item activity\_start.xml
 	\item activity\_main.xml
 	\item fragment\_about.xml
+        \item fragment\_name\_input.xml
 \end{itemize}
 
 \subsubsection{activity\_start}
@@ -246,6 +247,75 @@
 		item android:textAppearance="\\@style/TextAppearance.AppCompat.Large": Określa wygląd tekstu, w tym jego rozmiar, dla dużego ekranu.
 	\end{itemize}
 \end{itemize}
+
+\subsubsection{fragment\_name\_input.xml}
+\begin{lstlisting}
+[caption=Fragment\_name\_input.xml, label={lst:kod.xml}, language=XML]
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wprowadz imie"
+        android:padding="20dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zapisz" />
+
+    <Button
+        android:id="@+id/buttonback"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="500dp"
+        android:backgroundTint="#283593"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/button14"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+</LinearLayout>
+\end{lstlisting}
+\begin{itemize}
+    \item LinearLayout:
+    \begin{itemize}
+        \item xmlns:android: Ustala przestrzeń nazw dla atrybutów Android.
+        \item android:background: Ustawia tło interfejsu na obraz zasobu o nazwie "background1".
+        \item android:layout\_width i android:layout\_height: Określają szerokość i wysokość layoutu na "match\_parent", co oznacza, że mają zajmować całą dostępną przestrzeń.
+        \item android:orientation: Określa orientację dzieci w LinearLayout jako pionową.
+        \item android:padding: Ustawia wewnętrzny odstęp dla całego layoutu na 16dp.
+    \end{itemize}
+    \item EditText:
+    \begin{itemize}
+        \item android:id: Unikalny identyfikator dla pola tekstowego.
+        \item android:layout\_width i android:layout\_height: Określają szerokość i wysokość pola tekstowego na "match\_parent" i "wrap\_content" odpowiednio.
+        \item android:hint: Tekst podpowiedzi wyświetlany w polu tekstowym.
+        \item android:padding: Ustawia wewnętrzny odstęp dla pola tekstowego na 20dp.
+    \end{itemize}
+    \item Button (btnSave):
+    \begin{itemize}
+        \item android:id: Unikalny identyfikator dla przycisku "Zapisz".
+        \item android:layout\_width i android:layout\_height: Określają szerokość i wysokość przycisku na "wrap\_content".
+        \item android:text: Tekst wyświetlany na przycisku - "Zapisz".
+    \end{itemize}
+    \item Button (buttonback):
+    \begin{itemize}
+        \item android:id: Unikalny identyfikator dla przycisku "buttonback".
+        \item android:layout\_width i android:layout\_height: Określają szerokość i wysokość przycisku na konkretne wartości.
+        \item android:layout\_marginTop: Ustawia margines od góry na 500dp.
+        \item android:backgroundTint: Ustawia kolor tła przycisku.
+        \item android:fontFamily: Ustawia rodzinę czcionek dla tekstu na "sans-serif-light".
+        \item android:text: Ustawia tekst na przycisku na wartość zasobu o nazwie "button14".
+        \item android:textAppearance: Określa styl wyglądu tekstu na mały tekst.
+    \end{itemize}
+\end{itemize}
 \subsection{Pliki values}
 W folderze "values" w projekcie znajdują się zasoby związane z wartościami, takie jak kolory, ciągi znaków, style, itp. To miejsce, gdzie przechowuje się różne ustawienia i definicje, które są używane w aplikacji. 
 \subsubsection{Plik colors.xml}
@@ -348,4 +418,90 @@ Zawiera definicje motywów (themes), które określają wygląd ogólny aplikacj
 	\begin{itemize}
 		\item Wewnętrzna sekcja stylu Base.Theme.Finder zawiera zakomentowany kod, który nie jest aktywny (\(<!-- ... -->)\). Jest to przykład, jak można dostosowywać konkretny kolor w motywie, ale w tym przypadku jest on wyłączony (zakomentowany przy użyciu <!-- ... -->). Można odkomentować i dostosować kolor, jeśli to potrzebne.
 	\end{itemize}
+\end{itemize}
+\subsection{AndroidManifest.xml}
+\hspace{0,60 cm} Plik AndroidManifest.xml to plik konfiguracyjny używany w projektach Android. Zawiera on zestaw informacji na temat aplikacji, jej komponentów i wymagań dotyczących środowiska wykonawczego. Plik AndroidManifest.xml jest kluczowy dla systemu Android, ponieważ dostarcza informacje, które są niezbędne do poprawnego funkcjonowania aplikacji, a także do komunikacji z innymi aplikacjami i systemem operacyjnym.
+\begin{lstlisting}[caption=AndroidManifest.xml, label={lst:kod.xml}, language=XML]
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Uprawnienia -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.NOTIFY" />
+    <uses-permission android:name="android.permission.NOTIFICATION" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Finder"
+        tools:targetApi="31">
+
+        <!-- Aktywnosc startowa -->
+        <activity
+            android:name=".StartActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Finder">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Glowna aktywnosc -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Finder">
+        </activity>
+    </application>
+</manifest>
+\end{lstlisting}
+
+\begin{itemize}
+    \item \(<?\)xml version="1.0" encoding="utf-8"\(?>\): Deklaracja wersji XML i kodowania pliku.
+    \item \(<\)manifest xmlns:android="http://schemas.android.com/apk/res/android"\\xmlns:tools="http://schemas.android.com/tools"\(>\): Początek definicji pliku manifestu, gdzie xmlns:android i xmlns:tools to przestrzenie nazw używane w dokumencie.
+    \item \(<!-- Uprawnienia -->\) : Komentarz informujący, że poniżej zaczynają się deklaracje uprawnień (permissions).
+    \item \(<\)uses-permission android:name="android.permission.INTERNET" \(/>\): Uprawnienie dostępu do internetu.
+    \item \(<\)uses-permission android:name="android.permission.INTERNET" \(/>\): Uprawnienie dostępu do internetu.
+    \item \(<\)uses-permission android:name="android.permission.CAMERA" \(/>\): Uprawnienie dostępu do kamery.
+    \item \(<\)uses-feature android:name="android.hardware.camera" \(/>\): Wymaganie funkcji kamery.
+    \item \(<\)uses-permission android:name="android.permission.ACCESS\_FINE\_LOCATION" \(/>\): Uprawnienie dostępu do dokładnej lokalizacji.
+    \item \(<\)uses-permission android:name="android.permission.ACCESS\_COARSE\_\\LOCATION" \(/>\): Uprawnienie dostępu do przybliżonej lokalizacji.
+    \item \(<\)uses-permission android:name="android.permission.POST\_NOTIFICATIONS" \(/>\): Uprawnienie do publikowania powiadomień.
+    \item \(<\)uses-permission android:name="android.permission.VIBRATE" \(/>\): Uprawnienie do wibracji.
+    \item \(<\)uses-feature android:name="android.hardware.camera.autofocus" \(/>\): Wymaganie funkcji autofokusu kamery.
+    \item \(<\)uses-permission android:name="android.permission.NOTIFY" \(/>\): Uprawnienie do powiadamiania.
+    \item \(<\)uses-permission android:name="android.permission.NOTIFICATION" \(/>\): Uprawnienie do obsługi powiadomień.
+    \item \(<\)application ...\(>\): Rozpoczęcie definicji aplikacji. Zawiera ustawienia globalne dla aplikacji.
+    \item android:allowBackup="true": Włączenie automatycznego tworzenia kopii zapasowej danych aplikacji.
+    \item android:dataExtractionRules="@xml/data\_extraction\_rules": Wskazanie reguł wydobywania danych aplikacji.
+    \item android:fullBackupContent="@xml/backup\_rules": Wskazanie reguł pełnej kopii zapasowej danych.
+    \item android:icon="@mipmap/ic\_launcher": Ustawienie ikony aplikacji.
+    \item android:label="@string/app\_name": Ustawienie etykiety aplikacji.
+    \item android:roundIcon="@mipmap/ic\_launcher\_round": Ustawienie okrągłej ikony aplikacji.
+    \item android:supportsRtl="true": Wsparcie dla układów RTL (Right-to-Left).
+    \item android:theme="@style/Theme.Finder": Ustawienie motywu aplikacji.
+    \item tools:targetApi="31": Informacja narzędziowa o wersji API docelowej.
+    \item \(<\)activity ...\(>\): Definicja aktywności (ekranów) w aplikacji.
+    \item android:name=".StartActivity": Określenie nazwy klasy aktywności startowej.
+    \item android:exported="true": Wskazuje, czy aktywność może być uruchamiana przez inne aplikacje.
+    \item android:theme="@style/Theme.Finder": Ustawienie motywu dla tej konkretnej aktywności.
+    \item \(<\)intent-filter\(>\): Określenie filtru intencji dla aktywności.
+    \item \(<\)action android:name="android.intent.action.MAIN" \(/>\): Oznaczenie, że to jest główna aktywność.
+    \item \(<\)category android:name="android.intent.category.LAUNCHER" \(/>\): Oznaczenie, że aplikacja ma ikonę na ekranie startowym.
+    \item \(<\)activity android:name=".MainActivity" ...\(>\): Podobna definicja dla drugiej aktywności w aplikacji.
 \end{itemize}
